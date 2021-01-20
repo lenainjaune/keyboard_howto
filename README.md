@@ -36,6 +36,7 @@ user@host:~$ cat ~/.xbindkeysrc
 "xvkbd -xsendevent -text '}'"
     m:0xc + c:21
     Control+Alt + equal
-    
-user@host:~$ xbindkeys -f ~/.xbindkeysrc 
 ```
+Pour appliquer utiliser ```xbindkeys -f ~/.xbindkeysrc```
+
+Pour [identifier](https://wiki.archlinux.org/index.php/Xbindkeys#GUI_method) une combinaison de touche utiliser ```xbindkeys --multikey ``` 
