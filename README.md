@@ -37,6 +37,8 @@ user@host:~$ cat ~/.xbindkeysrc
     m:0xc + c:21
     Control+Alt + equal
 ```
-Pour appliquer utiliser ```xbindkeys -f ~/.xbindkeysrc```
+Pour appliquer utiliser```killall xbindkeys ; xbindkeys -f ~/.xbindkeysrc```
+
+Nota : On supprime tous les autres processus liés avant de recharcher la configuration
 
 Pour [identifier](https://wiki.archlinux.org/index.php/Xbindkeys#GUI_method) une combinaison de touche utiliser ```xbindkeys --multikey ``` 
