@@ -8,12 +8,19 @@ Ainsi Ctrl gauche + Alt gauche + 8 tape le backslash
 ATTENTION : la solution présenté ici a marché pour Ubuntu 16.04 LTS 64 bits mais pas sous Debian Buster
 => solution temporaire /media/lnj/DATA/projets/linux/keyboard/ctrl_alt_to_altgr avec Hotkey
 => voir aussi toute la recherche que j'ai faite pour réussir à faire fonctionner xkb mais qui n'a pas abouti car type non détecté par debug xkb (voir lien ArchLinux) MAIS symbole "fr" exécute bien la partie (?) latin9 car si je change A en Z, lorsque je redémarre "systemctl restart desktop-manager" (de mémoire) A est bien transformé en Z
+
 https://unix.stackexchange.com/questions/157834/how-to-bind-altgr-to-ctrl-alt/187495#187495
+
 https://web.archive.org/web/20150403042123/http://www.charvolant.org/~doug/xkb/html/xkb.html
+
 http://linux.lsdev.sil.org/wiki/index.php/Building_an_XKB_Keyboard
+
 Non étudiés : 
+
 https://wiki.archlinux.org/index.php/X_keyboard_extension#Caps_hjkl_as_vimlike_arrow_keys
+
 https://www.x.org/releases/X11R7.7/doc/kbproto/xkbproto.html
+
 TODO : trouver solution pour l'intégrer au dessus du serveur X
 
 J'ai trouvé une solution acceptable [ici](https://unix.stackexchange.com/questions/84707/how-can-i-make-ctrl-alt-act-like-alt-gr-in-ubuntu/184886#184886)
