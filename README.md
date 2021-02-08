@@ -13,13 +13,19 @@ user@host:~# grep "CONFIG_MAGIC_SYSRQ" /boot/config-$(uname -r)
 CONFIG_MAGIC_SYSRQ=y
 CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
 ```
-[source]()
+[source](https://memo-linux.com/magic-keys-le-dernier-recours-en-cas-de-gele-du-systeme/)
+
+Nota : je  ne suis pas sûr, mais il semblerait que CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6 
+indique l'ensemble des combinaisons des touches autorisées par défaut du système (ici Debian) ; 
+d'après ce que je comprends mettre autre chose que "1" dans /proc/sys/kernel/sysrq
+permet de filtrer les touches autorisées à notre convenence
+
 OU bien
 ```sh
 user@host:~# cat /proc/sys/kernel/sysrq
 1
 ```
-[source]()
+[source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 ### Activer temporairement
 ```sh
 user@host:~# echo 1 > /proc/sys/kernel/sysrq
@@ -31,7 +37,8 @@ Ajouter la ligne ```kernel.sysrq=1``` dans ```/etc/sysctl.conf```
 ### Se tirer d'une situation désastreuse
 "La combinaison de « Alt-Sys s », « Alt-Sys u » et « Alt-Sys r » permet de se tirer de situation vraiment désastreuse et obtenir à nouveau l'accès à un clavier opérationnel sans avoir à arrêter le système." ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
 
-Nota : les combinaisons de touches sont indépendantes de la disposition du clavier (AZERTY ou QWERTY), ce qui n'est pas le cas des touches S, U et R ([wikipédia](https://en.wikipedia.org/wiki/Magic_SysRq_key#Commands))
+Nota : Les touches magiques ne tiennent pas compte de la disposition de votre clavier et sont basées sur le layout QWERTY ([source](http://doc.ubuntu-fr.org/touches_magiques#les_combinaisons_de_touches)), ce qui n'est pas le cas des touches S, U et R ([wikipédia](https://en.wikipedia.org/wiki/Magic_SysRq_key#Commands))
+
 ## Alternative à AltGr
 Sous Windows, sur un clavier AZERTY on peut taper backslash sans bouger les doigts en remplacant AltGr par Ctrl gauche + Alt gauche
 
