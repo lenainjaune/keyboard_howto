@@ -1,6 +1,8 @@
 # keyboard_howto
 
-# Touches magiques SysRq (Systèm Request : requête système)
+# Touches magiques SysRq
+Les magic SysRq (Systèm Request : requête système) keys sont des combinaisons de touches type *Alt + SysRq + Touche* permettant d'envoyer des commandes de bas niveau directement au noyau. ([source]https://debian-facile.org/doc:systeme:touches-magiques(https://debian-facile.org/doc:systeme:touches-magiques))
+
 Remarque : sur un clavier AZERTY, la touche "SysRq" est la touche "Impression écran système"
 
 Conseil important : 
