@@ -1,5 +1,37 @@
 # keyboard_howto
 
+# Touches magiques SysRq (Systèm Request : requête système)
+Remarque : sur un clavier AZERTY, la touche "SysRq" est la touche "Impression écran système"
+
+Conseil important : 
+attendre plusieurs secondes entre les différentes combinaisons de touches, 
+car en cas de plantage sévère vous ne verrez pas les messages de progression s'afficher... ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
+## Linux Debian Stretch
+### Cette fonctionnalité est elle activée ?
+```sh
+user@host:~# grep "CONFIG_MAGIC_SYSRQ" /boot/config-$(uname -r)
+CONFIG_MAGIC_SYSRQ=y
+CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
+```
+[source]()
+OU bien
+```sh
+user@host:~# cat /proc/sys/kernel/sysrq
+1
+```
+[source]()
+### Activer temporairement
+```sh
+user@host:~# echo 1 > /proc/sys/kernel/sysrq
+```
+[source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
+### Rendre permanent
+Ajouter la ligne ```kernel.sysrq=1``` dans ```/etc/sysctl.conf```
+
+### Se tirer d'une situation désastreuse
+"La combinaison de « Alt-Sys s », « Alt-Sys u » et « Alt-Sys r » permet de se tirer de situation vraiment désastreuse et obtenir à nouveau l'accès à un clavier opérationnel sans avoir à arrêter le système." ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
+
+Nota : les combinaisons de touches sont indépendantes de la disposition du clavier (AZERTY ou QWERTY), ce qui n'est pas le cas des touches S, U et R ([wikipédia](https://en.wikipedia.org/wiki/Magic_SysRq_key#Commands))
 ## Alternative à AltGr
 Sous Windows, sur un clavier AZERTY on peut taper backslash sans bouger les doigts en remplacant AltGr par Ctrl gauche + Alt gauche
 
