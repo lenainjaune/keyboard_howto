@@ -19,7 +19,7 @@ user@host:~# cat /proc/sys/kernel/sysrq
 Nota : la valeur retournée est la combinaison des fonctionnalités autorisées (voir [Fonctionnalités SysRq](#func_sysrq))
 ### <a name="func_sysrq"></a> Fonctionnalités SysRq
 La valeur de /proc/sys/kernel/sysrq (voir dessus) indique les fonctionnalités actives de SysRq : 0 SysRq est désactivé, 1 SysRq est activé, 
-&gt;1 seuls les fonctionnalités des bits à 1 sont activées ([source](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html#how-do-i-enable-the-magic-sysrq-key)
+&gt;1 seuls les fonctionnalités des bits à 1 sont activées ([source](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html#how-do-i-enable-the-magic-sysrq-key))
 ### Commandes SysRq
 Voir [ici](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html#what-are-the-command-keys)
 ### Activer/Désactiver temporairement
