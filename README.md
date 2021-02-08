@@ -7,7 +7,7 @@ Conseil important :
 attendre plusieurs secondes entre les différentes combinaisons de touches, 
 car en cas de plantage sévère vous ne verrez pas les messages de progression s'afficher... ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
 ## Linux Debian Stretch
-### Cette fonctionnalité est elle activée ?
+### <a name="enabled_or_not"></a> Cette fonctionnalité est elle activée ?
 ```sh
 user@host:~# cat /proc/sys/kernel/sysrq
 1
@@ -20,13 +20,13 @@ Important : la valeur retournée est la combinaison des fonctionnalités autoris
 ```sh
 user@host:~# echo 1 > /proc/sys/kernel/sysrq
 ```
-Nota : pour choisir l'action temporaire à effectuer (0, 1, etc.), se référer à la note de dessus
+Nota : pour choisir l'action temporaire à effectuer, se référer à [Cette fonctionnalité est elle activé](#enabled_or_not)
 
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 ### Rendre permanent
 Ajouter la ligne ```kernel.sysrq=1``` dans ```/etc/sysctl.conf```
 
-Nota : pour choisir l'action permanente à effectuer (0, 1, etc.), se référer à la note de dessus
+Nota : pour choisir l'action permanente à effectuer, se référer à [Cette fonctionnalité est elle activé](#enabled_or_not)
 ### Se tirer d'une situation désastreuse
 "La combinaison de « Alt-Sys s », « Alt-Sys u » et « Alt-Sys r » permet de se tirer de situation vraiment désastreuse et obtenir à nouveau l'accès à un clavier opérationnel sans avoir à arrêter le système." ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
 
