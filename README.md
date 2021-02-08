@@ -9,20 +9,24 @@ Conseil important :
 attendre plusieurs secondes entre les différentes combinaisons de touches, 
 car en cas de plantage sévère vous ne verrez pas les messages de progression s'afficher... ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
 ## Linux Debian Stretch
-### <a name="enabled_or_not"></a> Cette fonctionnalité est elle activée ?
+### Magic SysRq est-il activé ?
 ```sh
 user@host:~# cat /proc/sys/kernel/sysrq
 1
 ```
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 
-Important : la valeur retournée est la combinaison des fonctionnalités autorisées ; 0 SysRq est désactivé, 1 SysRq est activé, 
-&gt;1 seuls les fonctionnalités des bits à 1 sont activées ([source](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html))
+Nota : la valeur retournée est la combinaison des fonctionnalités autorisées (voir [Fonctionnalités SysRq](#func_sysrq))
+### <a name="func_sysrq"></a> Fonctionnalités SysRq
+La valeur de /proc/sys/kernel/sysrq (voir dessus) indique les fonctionnalités actives de SysRq : 0 SysRq est désactivé, 1 SysRq est activé, 
+&gt;1 seuls les fonctionnalités des bits à 1 sont activées ([source](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html#how-do-i-enable-the-magic-sysrq-key)
+### Commandes SysRq
+Voir [ici](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html#what-are-the-command-keys)
 ### Activer/Désactiver temporairement
 ```sh
 user@host:~# echo 1 > /proc/sys/kernel/sysrq
 ```
-Nota : pour choisir l'action temporaire à effectuer, se référer à [Cette fonctionnalité est elle activé ?](#enabled_or_not)
+Nota : pour choisir les fonctions temporaires possibles, se référer à [Fonctionnalités SysRq](#func_sysrq)
 
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 ### Rendre permanent
@@ -30,7 +34,7 @@ Ajouter la ligne ```kernel.sysrq=1``` dans ```/etc/sysctl.conf```
 
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 
-Nota : pour choisir l'action permanente à effectuer, se référer à [Cette fonctionnalité est elle activé ?](#enabled_or_not)
+Nota : pour choisir les fonctions permanentes à appliquer, se référer à [Fonctionnalités SysRq](#func_sysrq)
 ### Se tirer d'une situation désastreuse
 "La combinaison de « Alt-Sys s », « Alt-Sys u » et « Alt-Sys r » permet de se tirer de situation vraiment désastreuse et obtenir à nouveau l'accès à un clavier opérationnel sans avoir à arrêter le système." ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
 
