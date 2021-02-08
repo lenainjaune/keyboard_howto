@@ -26,7 +26,7 @@ Voir [ici](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html#what-ar
 ```sh
 user@host:~# echo 1 > /proc/sys/kernel/sysrq
 ```
-Nota : pour choisir les fonctions temporaires possibles, se référer à [Fonctionnalités SysRq](#func_sysrq)
+Nota : pour choisir les fonctions temporaires à appliquer, se référer à [Fonctionnalités SysRq](#func_sysrq)
 
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 ### Rendre permanent
