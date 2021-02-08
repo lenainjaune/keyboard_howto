@@ -28,6 +28,8 @@ Nota : pour choisir l'action temporaire à effectuer, se référer à [Cette fon
 ### Rendre permanent
 Ajouter la ligne ```kernel.sysrq=1``` dans ```/etc/sysctl.conf```
 
+[source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
+
 Nota : pour choisir l'action permanente à effectuer, se référer à [Cette fonctionnalité est elle activé ?](#enabled_or_not)
 ### Se tirer d'une situation désastreuse
 "La combinaison de « Alt-Sys s », « Alt-Sys u » et « Alt-Sys r » permet de se tirer de situation vraiment désastreuse et obtenir à nouveau l'accès à un clavier opérationnel sans avoir à arrêter le système." ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
