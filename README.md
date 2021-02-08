@@ -15,18 +15,18 @@ user@host:~# cat /proc/sys/kernel/sysrq
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 
 Important : la valeur retournée est la combinaison des fonctionnalités autorisées ; 0 SysRq est désactivé, 1 SysRq est activé, 
->1 seuls les fonctionnalités des bits à 1 sont activées ([source](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html))
+&gt;1 seuls les fonctionnalités des bits à 1 sont activées ([source](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html))
 ### Activer/Désactiver temporairement
 ```sh
 user@host:~# echo 1 > /proc/sys/kernel/sysrq
 ```
-Nota : pour choisir l'action temporaire à effectuer (0, 1 ou >1), se référer à la note de dessus
+Nota : pour choisir l'action temporaire à effectuer (0, 1, etc.), se référer à la note de dessus
 
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 ### Rendre permanent
 Ajouter la ligne ```kernel.sysrq=1``` dans ```/etc/sysctl.conf```
 
-Nota : pour choisir l'action permanente à effectuer (0, 1 ou >1), se référer à la note de dessus
+Nota : pour choisir l'action permanente à effectuer (0, 1, etc.), se référer à la note de dessus
 ### Se tirer d'une situation désastreuse
 "La combinaison de « Alt-Sys s », « Alt-Sys u » et « Alt-Sys r » permet de se tirer de situation vraiment désastreuse et obtenir à nouveau l'accès à un clavier opérationnel sans avoir à arrêter le système." ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
 
