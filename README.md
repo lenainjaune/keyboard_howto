@@ -9,31 +9,24 @@ car en cas de plantage sévère vous ne verrez pas les messages de progression s
 ## Linux Debian Stretch
 ### Cette fonctionnalité est elle activée ?
 ```sh
-user@host:~# grep "CONFIG_MAGIC_SYSRQ" /boot/config-$(uname -r)
-CONFIG_MAGIC_SYSRQ=y
-CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6
-```
-[source](https://memo-linux.com/magic-keys-le-dernier-recours-en-cas-de-gele-du-systeme/)
-
-Nota : je  ne suis pas sûr, mais il semblerait que CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x01b6 
-indique l'ensemble des combinaisons des touches autorisées par défaut du système (ici Debian) ; 
-d'après ce que je comprends mettre autre chose que "1" dans /proc/sys/kernel/sysrq
-permet de filtrer les touches autorisées à notre convenence
-
-OU bien
-```sh
 user@host:~# cat /proc/sys/kernel/sysrq
 1
 ```
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
-### Activer temporairement
+
+Important : la valeur retournée est la combinaison des fonctionnalités autorisées ; 0 SysRq est désactivé, 1 SysRq est activé, 
+>1 seuls les fonctionnalités des bits à 1 sont activées ([source](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html))
+### Activer/Désactiver temporairement
 ```sh
 user@host:~# echo 1 > /proc/sys/kernel/sysrq
 ```
+Nota : pour choisir l'action temporaire à effectuer (0, 1 ou >1), se référer à la note de dessus
+
 [source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key)
 ### Rendre permanent
 Ajouter la ligne ```kernel.sysrq=1``` dans ```/etc/sysctl.conf```
 
+Nota : pour choisir l'action permanente à effectuer (0, 1 ou >1), se référer à la note de dessus
 ### Se tirer d'une situation désastreuse
 "La combinaison de « Alt-Sys s », « Alt-Sys u » et « Alt-Sys r » permet de se tirer de situation vraiment désastreuse et obtenir à nouveau l'accès à un clavier opérationnel sans avoir à arrêter le système." ([source](https://www.debian.org/doc/manuals/debian-reference/ch09.fr.html#_alt_sysrq_key))
 
